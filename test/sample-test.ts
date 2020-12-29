@@ -1,15 +1,18 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("Greeter", function () {
+describe("GameItems", function () {
   it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
+    const GameItems = await ethers.getContractFactory("GameItems");
+    const gameItems = await GameItems.deploy();
 
-    await greeter.deployed();
-    expect(await greeter.greet()).to.equal("Hello, world!");
-
-    await greeter.setGreeting("Hola, mundo!");
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
+    await gameItems.deployed();
+    expect(await gameItems.GOLD()).to.equal(ethers.BigNumber.from(0));
+    expect(
+      await gameItems.balanceOf(
+        "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        ethers.BigNumber.from(2)
+      )
+    ).to.equal(1);
   });
 });

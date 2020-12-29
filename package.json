@@ -7,6 +7,9 @@
     "compile": "hardhat compile",
     "accounts": "hardhat accounts"
   },
+  "dependencies": {
+    "@openzeppelin/contracts": "3.3.0"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",

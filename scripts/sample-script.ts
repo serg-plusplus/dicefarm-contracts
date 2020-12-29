@@ -3,12 +3,11 @@ import { run, ethers } from "hardhat";
 async function main() {
   await run("compile");
 
-  const accounts = await ethers.getSigners();
+  // We get the contract to deploy
+  const GameItems = await ethers.getContractFactory("GameItems");
+  const gameItems = await GameItems.deploy();
 
-  console.log(
-    "Accounts:",
-    accounts.map((a) => a.address)
-  );
+  console.log("GameItems deployed to:", gameItems.address);
 }
 
 main()
