@@ -1,4 +1,4 @@
-# Awesome random
+# DiceFarm
 
 Created with [Hardhat](https://hardhat.org/).
 
